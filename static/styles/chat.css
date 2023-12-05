@@ -1,0 +1,170 @@
+.chat-wrapper {
+    overflow: hidden;
+    --btn-width: calc(var(--defined-width) * (82 / 1080));
+}
+
+/* header */
+.chat-wrapper .header {
+    display: block;
+    padding-top: calc(var(--defined-height) * (100 / 1920));
+    padding-left: calc(var(--defined-width) * (10 / 1080));
+    /*background: #f18c7e;*/
+    background: transparent;
+    color: white;
+    text-align: center;
+}
+
+/* 네비게이션 버튼(사이드바) */
+#sidebar-button {
+    display:block;
+    background-color: transparent;
+    border-color: transparent;
+    min-width: 44px;
+}
+
+#navigation-btn-image {
+    width: calc(var(--defined-width) * (50 / 1080));
+}
+/* .네비게이션 버튼(사이드바) */
+/* .header */
+/* chat */
+.chat-wrapper .chat {
+    padding-bottom: 80px;
+}
+
+.chat-wrapper .chat ul {
+    width: 100%;
+    list-style: none;
+}
+
+.chat-wrapper .chat ul li {
+    width: 100%;
+}
+
+.chat-wrapper .chat ul li.left {
+    text-align: left;
+}
+
+.chat-wrapper .chat ul li.right {
+    text-align: right;
+}
+
+.chat-wrapper .chat ul li > div {
+    font-size: 13px;
+}
+
+.chat-wrapper .chat ul li > div.sender {
+    margin: 10px 20px 0 20px;
+    font-weight: bold;
+}
+
+.chat-wrapper .chat ul li > div.message {
+    display: inline-block;
+    word-break: break-all;
+    margin: 5px 20px;
+    max-width: 75%;
+    border: 1px solid #888;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fcfcfc;
+    color: #555;
+    text-align: left;
+}
+/* .chat */
+/* 가이드 영역 */
+.guide-container {
+    display: block;
+    position:relative;
+    padding-top: calc(var(--defined-height) * (576 / 1920));
+}
+
+/* 가이드 로고 */
+.guide-container > .guide-logo {
+    display: block;
+    width: calc(var(--defined-width) * (290 / 1080));
+    margin: auto;
+}
+/* .가이드 로고 */
+/* 가이드 텍스트 */
+.guide-container > .medical-sl-chatbot {
+    display: block;
+    margin: calc(var(--defined-height) * (64 / 1920));
+    color: #000;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (40 / 1080));
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+
+.guide-container > .guide-text {
+    display: block;
+    text-align: center;
+    margin: calc(var(--defined-height) * (33 / 1920)) auto;
+    color: #000;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (33 / 1080));
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+/* .가이드 텍스트 */
+/* footer */
+.footer {
+    overflow: hidden;
+}
+
+/* input-div */
+.grid-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns:  var(--btn-width)
+                            calc(var(--defined-width) - var(--btn-width) * 2 - 5px)
+                            var(--btn-width);
+    grid-template-rows: 70px;
+    /*position: absolute;*/
+    position: fixed;
+    bottom: 0;
+    max-width: 100%;
+    background-color: transparent;
+    text-align: center;
+    /*border-top: 1px solid #f18c7e;*/
+}
+
+
+/* 도움말 버튼 */
+.help-btn {
+    flex-shrink: 0;
+}
+
+#help-btn-img {
+    width: var(--btn-width);
+    height: var(--btn-width);
+    padding-left: 5px;
+}
+/* .도움말 버튼 */
+/* 메시지 입력창 */
+#message-input {
+    width: 80%;
+    height: 12px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+}
+/* .메시지 입력창 */
+/* 녹화버튼 */
+.record-btn {
+    flex-shrink: 0;
+}
+#record-btn-img {
+    width: var(--btn-width);
+    height: calc(var(--defined-height) * (60 / 1920));
+}
+/* .녹화버튼 */
+/* format */
+.format {
+    display: none;
+}
+/* .input-div */

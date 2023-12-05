@@ -1,0 +1,38 @@
+div.text-container {
+    display: block;
+    /*margin: auto;*/
+    margin-top: calc(var(--defined-height) * (495 / 1920));
+}
+
+/* 수어로 채팅을 하다 */
+#description {
+    color: #000;
+    text-align: center;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (50 / 1080));;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+/* 수채화 */
+#logo-text {
+    color: #000;
+    text-align: center;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (150 / 1080));
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    margin-top: calc(var(--defined-height) * (21 / 1080));
+}
+
+/* 로고 이미지 */
+.logo-img-container > .logo-content {
+    display: block;
+    width: calc(var(--defined-width) * (551 / 1080));
+    align-items: center;
+    margin: auto;
+    margin-top: calc(var(--defined-height) * (39 / 1080));
+}

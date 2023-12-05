@@ -1,0 +1,153 @@
+#area {
+    background-color: #f6f6f6;
+}
+
+
+/* 상단 영역 */
+.header-section {
+    display: block;
+    margin-top: calc(var(--defined-height) * (50 / 1920));
+    /*margin-top: 30px;*/
+}
+.header-section > h1, p {
+    color: #000000;
+    font-family: 'SCoreDream';
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+}
+
+/* 수어 녹화하기 */
+.header-section > h1 {
+    font-size: calc(var(--defined-width) * (45 / 1080));
+    font-weight: 500;
+}
+/* .수어 녹화하기 */
+/* 손과 얼굴이 화면 안으로... */
+.header-section > p {
+    font-size: calc(var(--defined-width) * (35 / 1080));
+    font-weight: 300;
+    margin-top: calc(var(--defined-height) * (15 / 1920));
+}
+/* .손과 얼굴이 화면 안으로... */
+/* .상단 영역 */
+/* 녹화 화면 영역 */
+.record-section {
+    margin: 0 auto 0 auto;
+    margin-top: calc(var(--defined-height) * (190 / 1920));
+}
+
+/* 녹화 화면 */
+#record-screen {
+    background-color: #2e2c25;
+    margin: 0 auto 0 auto;
+    width: calc(var(--defined-width) * (766 / 1080));
+    height: calc(var(--defined-height) * (852 / 1920));
+    border-radius: calc(var(--defined-width) * (50 / 1080));
+}
+
+#webcam-preview {
+    width: calc(var(--defined-width) * (766 / 1080));
+    height: calc(var(--defined-height) * (852 / 1920));
+}
+/* .녹화 화면 */
+/* 녹화 안내문 */
+.record-section > .record-description {
+    color: #000000;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (35 / 1080));
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+
+    margin-top: calc(var(--defined-height) * (70 / 1920));
+}
+/* .녹화 안내문 */
+/* 컨트롤 버튼 영역 */
+.btn-section {
+    /*background-color: #3E5C9A;*/
+    align-items: center;
+    margin-top: calc(var(--defined-height) * (222 / 1920));
+}
+
+/* 팝업 메시지 영역 */
+div.popup-message-container {
+    display: block;
+    height: calc(var(--defined-height) * (50 / 1920));
+    margin-top: calc(var(--defined-height) * (75 / 1920) * (-1));
+    padding: calc(var(--defined-height) * (10 / 1920))
+             calc(var(--defined-width) * (10 / 1080));
+}
+
+div.popup-message-container > .popup-message-content {
+    display: none;
+
+    color: #000000;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (30 / 1080));
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+}
+/* .팝업 메시지 영역 */
+/* 안내문 영역 */
+.btn-section > .main-text {
+    display: block;
+
+    color: #000000;
+    font-family: 'SCoreDream';
+    font-size: calc(var(--defined-width) * (35 / 1080));
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+}
+
+.btn-section > .text-save-record {
+    display: none;
+}
+/* .안내문 영역 */
+/* 녹화 종료 버튼 */
+#btn-stop {
+    display: none;
+    float: left;
+    margin-left: calc(var(--defined-width) * (100 / 1080));
+    margin-top:  calc(var(--defined-height) * (80 / 1920));
+}
+
+#btn-stop, #btn-stop > img,
+#btn-reset, #btn-reset > img  {
+    width: calc(var(--defined-width) * (89 / 1080));
+    height: calc(var(--defined-height) * (89 / 1920));
+}
+/* .녹화 종료 버튼 */
+/* 녹화 시작 버튼, 중간 저장 버튼 */
+#btn-start, #btn-save {
+    display: block;
+    bottom: 0;
+    margin-right: calc(var(--defined-width) * (465 / 1080));
+    margin-left: auto;
+    margin-top: calc(var(--defined-height) * (54 / 1920));
+}
+#btn-start, #btn-start > img,
+#btn-save,  #btn-save  > img {
+    width: calc(var(--defined-width) * (160 / 1080));
+    height: calc(var(--defined-height) * (160 / 1920));
+}
+/* .녹화 시작 버튼, 중간 저장 버튼 */
+/* 중간 저장 버튼 */
+#btn-save {
+    display: none;
+  }
+/* .중간 저장 버튼 */
+/* 재시작 버튼 */
+#btn-reset {
+    display:none;
+    float: right;
+    margin-right: calc(var(--defined-width) * (100 / 1080));
+    margin-top:  calc(var(--defined-height) * (115 / 1920) * (-1));
+
+}
+/* .재시작 버튼 */
+
+/* .buttons */
+/* .컨트롤 버튼 영역 */

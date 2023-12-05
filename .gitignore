@@ -1,0 +1,10 @@
+/.env
+/videos/*.mp4
+/db/*
+/model/SSLRv1/data/Relu512DenseNet121_75labelFrontALLdataMiddle70frame.pickle
+/model/SSLRv1/testdata
+/model/SSLRv1/SSLRV1_model.py
+/model/SSLRv2/best.pt
+/**/.DS_Store
+/.idea
+/modules/__pycache__

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta name="description" content="record">
+		<title>SOOCHAEHWA</title>
+		<link rel="stylesheet" href="../static/styles/global.css"> <!-- CSS -->
+		<link rel="stylesheet" href="../static/styles/record.css"> <!-- CSS -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- jQuery -->
+		<script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script> <!-- SocketIO -->
+	</head>
+	<body>
+	<div id="area">
+		<!-- 상단 영역 -->
+		<div class="header-section">
+			<h1 class="header-heading">수어 녹화하기</h1>
+			<p class="header-description">손과 얼굴이 화면 안으로 들어오게 해주세요</p>
+		</div>
+		<!-- .상단 영역 -->
+
+		<!-- 녹화 화면 영역 -->
+		<div class="record-section">
+			<!-- 녹화 화면 -->
+			<div id="record-screen">
+				<video id="webcam-preview" autoplay></video>
+			</div>
+			<!-- .녹화 화면 -->
+			<!-- 녹화 안내문 -->
+			<p class="record-description">
+				하나의 단어 표현이 끝나면 <strong>중간 저장</strong>을 눌러주세요.
+			</p>
+			<!-- .녹화 안내문 -->
+		</div>
+		<!-- .녹화 화면 영역 -->
+
+		<!-- 컨트롤 버튼 영역 -->
+		<div class="btn-section">
+			<!-- 팝업 메시지 영역 -->
+			<div class="popup-message-container">
+				<p class="popup-message-content">저장되었습니다!</p>
+			</div>
+			<!-- .안내문(저장되었습니다!) 영역 -->
+			<!-- 안내문 영역 -->
+			<p class="text-start-record main-text">녹화 시작</p>
+			<p class="text-save-record main-text">중간 저장</p>
+			<!-- .안내문 영역 -->
+			<!-- 녹화 종료 버튼 -->
+			<button id="btn-stop" class="record-button">
+				<img src="../static/images/record_btn_stop.png" alt="record_btn_stop.png">
+			</button>
+			<!-- .녹화 종료 버튼 -->
+			<!-- 녹화 시작 버튼 -->
+			<button id="btn-start" class="record-button">
+				<img src="../static/images/record_btn_start.png" alt="record_btn_start.png">
+			</button>
+			<!-- .녹화 시작 버튼 -->
+			<!-- 중간 저장 버튼 -->
+			<button id="btn-save" class="record-button">
+				<img src="../static/images/record_btn_save.png" alt="record_btn_save.png">
+			</button>
+			<!-- .중간 저장 버튼 -->
+			<!-- 재시작 버튼 -->
+			<button id="btn-reset" class="record-button">
+				<img src="../static/images/record_btn_reset.png" alt="record_btn_reset.png">
+			</button>
+			<!-- .재시작 버튼 -->
+		</div>
+	</div>
+	<script src="../static/js/recordWebcam.js"></script> <!-- javascript -->
+	<script>
+		document.getElementById("btn-stop").addEventListener("click", function() {
+			// 녹화 종료 버튼(메시지 입력창 우측) 눌렀을 때
+			window.location.href = "{{ url_for('chat') }}";
+		});
+	</script>
+	</body>
+</html>

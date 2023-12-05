@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <meta name="viewport" content="width=1080, initial-scale=1.0"> -->
+		<meta charset="utf-8">
+		<meta name="description" content="splash">
+		<title>SOOCHAEHWA</title>
+		<link rel="stylesheet" href="../static/styles/global.css"> <!-- CSS -->
+		<link rel="stylesheet" href="../static/styles/splash.css"> <!-- CSS -->
+	</head>
+	<body>
+		<div id="area">
+			<!-- 텍스트 영역 -->
+			<div class="text-container">
+				<p id="description" class="text-content">수어로 채팅을 하다</p>
+				<p id="logo-text" class="text-content">수채화</p>
+			</div>
+			<!-- .텍스트 영역 -->
+			<!-- 로고 이미지 영역 -->
+			<div class="logo-img-container">
+				<img id="splash-logo-image" class="logo-content" src="../static/images/logo(soochaehwa).png">
+			</div>
+			<!-- .로고 이미지 영역 -->
+		</div>
+		<script>
+			setTimeout(function() {
+            window.location.href = "{{ url_for('chat') }}";
+        }, 2.5 * 1000);
+		</script>
+	</body>
+</html>

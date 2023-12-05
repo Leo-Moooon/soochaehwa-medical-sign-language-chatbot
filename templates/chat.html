@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>SOOCHAEHWA</title>
+		<link rel="stylesheet" href="../static/styles/global.css"> <!-- CSS -->
+		<link rel="stylesheet" href="../static/styles/chat.css"> <!-- CSS -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- jQuery -->
+		<script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script> <!-- SocketIO -->
+	</head>
+	<body>
+		<div id="area" class="chat-wrapper">
+			<div class="header">
+				<!-- 네비게이션 버튼(사이드바) -->
+				<button id="sidebar-button">
+					<img id="navigation-btn-image" src="../static/images/btn_navigation.png">
+				</button>
+				<!-- .네비게이션 버튼(사이드바) -->
+			</div>
+			<div class="chat">
+				<!-- 가이드 영역 -->
+				<div class="guide-container">
+					<!-- 가이드 로고 -->
+					<img class="guide-logo" src="../static/images/logo(soochaehwa).png" alt="logo(soochaehwa).png">
+					<!-- .가이드 로고 -->
+					<!-- 가이드 텍스트 -->
+					<p class="medical-sl-chatbot">의료 수어 챗봇</p>
+					<p class="guide-text">
+						병원 이용 간 궁금한 내용을<br>
+						챗봇에게 수어로 질문할 수 있어요
+					</p>
+					<!-- .가이드 텍스트 -->
+				</div>
+				<ul>
+					<!-- 동적 생성 -->
+				</ul>
+			</div>
+			<div class="footer">
+				<div class="grid-container">
+					<!-- 도움말 버튼 -->
+					<div class="grid-item">
+						<button class="help-btn">
+							<img id="help-btn-img" src="../static/images/btn_help.png" alt="btn_help.png">
+						</button>
+					</div>
+					<!-- .도움말 버튼 -->
+					<!-- 메시지 입력창 -->
+					<div class="grid-item input-div">
+						<textarea id='message-input', placeholder="메시지를 입력하세요."></textarea>
+					</div>
+					<!-- .메시지 입력창 -->
+					<!-- 녹화버튼 -->
+					<div class="grid-item">
+						<button id="record-button">
+							<img id="record-btn-img" src="../static/images/btn_record.png" alt="btn_record.png">
+						</button>
+					</div>
+					<!-- .녹화버튼 -->
+				</div>
+			</div>
+
+			<!-- format -->
+			<div class="chat-format">
+				<ul>
+					<li>
+						<div class="message">
+							<span></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../static/js/chat.js"></script> <!-- javascript -->
+		<script>
+			document.getElementById("record-button").addEventListener("click", function() {
+				// 녹화 버튼(메시지 입력창 우측) 눌렀을 때
+				window.location.href = "{{ url_for('record') }}";
+			});
+		</script>
+	</body>
+</html>
