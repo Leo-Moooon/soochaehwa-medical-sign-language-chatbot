@@ -139,9 +139,9 @@
         <div id="modeling-section">
             <h2>3. 모델링</h2>
             <h3 id="SSLR-V1">수어인식 모델: SSLR V1 (Soochaehwa Sign Language Recognizer V1)</h3>
-            <table class="sslrv1-table" style="border-collapse:collapse;">
+            <table class="sslrv1-table">
                 <tr>
-                    <td><img src="./src/images/SSLRV1_full.png" alt="SSLRV1_full.png" height="300"></td>
+                    <td><img src="./src/images/SSLRV1_full.png" height="300" alt="SSLRV1_full.png"></td>
                     <td>
                         <ol>
                             <li>접근 가설</li>
@@ -156,7 +156,7 @@
                                 <li>Transformer-Encoder 구조로, 프레임 간 전후맥락을 고려한 학습 의도</li>
                             </ul>
                             <br>
-                            <li>참고 레퍼런스</li>
+                            <li>참고 자료</li>
                             <ul>
                                 <li><em>"Beyond Short Snippets: Deep Networks for Video Classification"(Ng et al., 2015)</em></li>
                                 <li><em>"Attention Is All You Need" (Vaswani, A., et al., 2017)</em></li>
@@ -167,6 +167,37 @@
             </table>
             <br>
             <h3 id="SSLR-V2">수어인식 모델: SSLR V2 (Soochaehwa Sign Language Recognizer V2)</h3>
+            <table class="sslrv2-table">
+                <tr>
+                    <td><img src="./src/images/SSLRV2_full.png" height="300" alt="SSLRV2_full.png"></td>                    <td>
+                        <ol>
+                            <li>접근 가설</li>
+                            <ul>
+                                <li>많은 데이터를 필요로 하는 Vision Transformer의 특징이 
+                                    SSLR V1에서 과소적합(underfit)의 원인이 되었을 것으로 추정</li>
+                                <li>신체 키포인트 추출을 통해 특징 추출 극대화</li>
+                            </ul>
+                            <br>
+                            <li>아키텍쳐 특징</li>
+                            <ul>
+                                <li><strong>특징 추출기 변경</strong>
+                                    <ol>
+                                        <li>RGB 비디오에서 신체 Keypoint 데이터 추출</li>
+                                        <li>별도의 정규화 (Customized Normalization) 진행</li>
+                                    </ol>
+                                </li>
+                                <li>BERT의 구조를 차용하되, 각 block 사이에 Batch Normalization 레이어 추가</li>
+                            </ul>
+                            <br>
+                            <li>참고 자료</li>
+                            <ul>
+                                <li><em>"Preprocessing for Keypoint-Based Sign Language Translation without Glosses"(Kim & Baek, 2023)</em></li>
+                                <li><em>"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." Devlin, J., et al. (2019).</em></li>
+                            </ul>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
         </div>
         <br>
         <div id="chatbot-section">
