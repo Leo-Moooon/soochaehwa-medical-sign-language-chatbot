@@ -94,8 +94,8 @@
                         <ul class="SSLRV2-ul">
                             <li><a href="#strategy01">성능 개선 전략 01: Keypoint 추출</a></li>
                             <li><a href="#strategy02">성능 개선 전략 02: Customized Normalization</a></li>
+                            <li><a href="#ablation-study">Ablation Study: 성능개선 전략 적용 여부에 따른 SSLR 성능 변화</a></li>
                         </ul>
-                    <li><a href="">성능 비교: SSLR V1 vs V2</a></li>
                 </ul>
                 <br>
                 <li>챗봇</li>                
@@ -232,8 +232,14 @@
             </table>
             <li>레퍼런스: <em>"Preprocessing for Keypoint-Based Sign Language Translation without Glosses"(Kim & Baek, 2023)</em></li>
             <br>
-            <h3>Ablation Study: 성능개선 전략 적용 여부에 따른 SSLR 성능 변화</h3>
+            <h3 id="ablation-study">Ablation Study: 성능개선 전략 적용 여부에 따른 SSLR 성능 변화</h3>
             <img src="./src/images/SSLRV2_ablation_study.png" alt="SSLRV2_ablation_study.png">
+            <p>Input data를 Keypoint로 변경하고, Customized-Normalization까지 적용하였을 때 가장 높은 성능이 나왔음.</p>
+            <br>
+            <h3 id="SSLRV2-result">SSLR V2 예측 결과</h3>
+            <img src="./src/images/SSLRV2_predict_result.png" height="250" alt="SSLRV2_predict_result.png">
+            <li>SSLR V1에 더 일반화 된 성능</li>
+            <li>하지만 유사한 동작에 대해서는 잘 맞추지 못하는 문제가 남아있음. (예시: 팔, 손)</li>
         </div>
         <br>
         <div id="chatbot-section">
