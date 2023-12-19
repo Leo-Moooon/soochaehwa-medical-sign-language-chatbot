@@ -92,9 +92,10 @@
                     <li><a href="#SSLR-V1">수어인식 모델: SSLR V1</a></li>
                     <li><a href="#SSLR-V2">수어인식 모델: SSLR V2</a></li>
                         <ul class="SSLRV2-ul">
-                            <li><a href="">핵심 성능 개선 전략</a></li>
-                            <li><a href="">성능 비교: SSLR V1 vs V2</a></li>
+                            <li><a href="#strategy01">성능 개선 전략 01: Keypoint 추출</a></li>
+                            <li><a href="#strategy02">성능 개선 전략 02: Customized Normalization</a></li>
                         </ul>
+                    <li><a href="">성능 비교: SSLR V1 vs V2</a></li>
                 </ul>
                 <br>
                 <li>챗봇</li>                
@@ -166,6 +167,21 @@
                 </tr>
             </table>
             <br>
+            <h3>SSLR V1 학습 및 예측 결과</h3>
+            <table>
+                <tr>
+                    <th>Accuracy</th>
+                    <th>예측 결과</th>
+                </tr>
+                <tr>
+                    <td><img src="./src/images/SSLRV1_accuracy_plot.png" width="350" alt="SSLRV1_accuracy_plot.png"></td>
+                    <td><img src="./src/images/SSLRV1_predict_result.png" width="400" alt="SSLRV1_predict_result.png"></td>
+                </tr>
+            </table>
+            <h4>원인 분석</h4>
+            <li>부족한 특징 추출로 인한 underfit 현상.</li>
+            <li>모델이 학습데이터에 과하게 편향되어 실제 데이터를 제대로 맞추지 못하는 것으로 추정.</li>
+            <br>
             <h3 id="SSLR-V2">수어인식 모델: SSLR V2 (Soochaehwa Sign Language Recognizer V2)</h3>
             <table class="sslrv2-table">
                 <tr>
@@ -198,6 +214,26 @@
                     </td>
                 </tr>
             </table>
+            <h3 id="strategy01">성능개선 전략 01: Keypoint 추출</h3>
+            <p>Mediapipe 라이브러리를 이용한 신체 Keypoint 추출. 그 후 데이터프레임으로 정규화</p>
+            <img src="./src/images/SSLRV2_mediapipe.png" alt="">
+            <br>
+            <h3 id="strategy02">성능개선 전략 02: Customized Normalization</h3>
+            <p>하단의 레퍼런스에서 제안한 Customized Normalization 기법을 보유 데이터셋에 적합하게 일부 수정하여 코드 구현 및 적용.</p>
+            <table>
+                <tr>
+                    <th>STEP01: 하반신 제거 및 지역 분할</th>
+                    <th>STEP02: 각 지역별 거리 정규화</th>
+                </tr>
+                <tr>
+                    <td><img src="./src/images/SSLRV2_cn_step01.png" alt="SSLRV2_cn_step01.png"></td>
+                    <td><img src="./src/images/SSLRV2_cn_step02.png" alt="SSLRV2_cn_step02.png"></td>
+                </tr>
+            </table>
+            <li>레퍼런스: <em>"Preprocessing for Keypoint-Based Sign Language Translation without Glosses"(Kim & Baek, 2023)</em></li>
+            <br>
+            <h3>Ablation Study: 성능개선 전략 적용 여부에 따른 SSLR 성능 변화</h3>
+            <img src="./src/images/SSLRV2_ablation_study.png" height="300" alt="SSLRV2_ablation_study.png">
         </div>
         <br>
         <div id="chatbot-section">
