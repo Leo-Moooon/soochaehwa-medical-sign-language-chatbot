@@ -233,7 +233,7 @@
             <li>레퍼런스: <em>"Preprocessing for Keypoint-Based Sign Language Translation without Glosses"(Kim & Baek, 2023)</em></li>
             <br>
             <h3>Ablation Study: 성능개선 전략 적용 여부에 따른 SSLR 성능 변화</h3>
-            <img src="./src/images/SSLRV2_ablation_study.png" height="300" alt="SSLRV2_ablation_study.png">
+            <img src="./src/images/SSLRV2_ablation_study.png" alt="SSLRV2_ablation_study.png">
         </div>
         <br>
         <div id="chatbot-section">
