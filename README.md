@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="templates/readme.css" />
     </head>
     <body>
-        <h1>수채화: 의료분야 수어 챗봇 서비스</h1>
+        <h1>수채화 - 의료분야 수어 챗봇 서비스</h1>
         <div class="award">
             <h3>제 5기 KDT 해커톤 우수상(고용노동부 장관상) 수상</h3>
             <img src="src/images/award.jpeg" alt="award.jpeg">
@@ -78,7 +78,7 @@
                 <li>서비스</li>
                 <ul class="serve-ul">
                     <li><a href="#testing">활용 예시(시연 영상)</a></li>
-                    <li><a href="#userflowchart">서비스 UI</a></li>
+                    <li><a href="#service-ui">서비스 UI</a></li>
                     <li><a href="#service-architecture">서비스 구조도</a></li>
                 </ul>
                 <br>
@@ -108,20 +108,23 @@
                 <li>추후 개선 방향</li>
             </ol>
         </div>
-        <hr>
+        <br>
         <div id="service-section">
             <h2>1. 서비스</h2>
             <h3 id="testing">활용 예시</h3>
             <img src="./src/images/service_testing.gif" height="400">
             <br>
-            <h3 id="userflowchart">서비스 UI</h3>
-            <img src="./src/images/service_ui.png">
+            <br>
+            <h3 id="service-ui">서비스 UI</h3>
+            <img src="./src/images/service_ui.png" height="300" alt="service_ui.png">
+            <br>
             <br>
             <h3 id="service-architecture">서비스 구조도</h3>
-            <img src="./src/images/service_architecture.png" alt="service_architecture.png">
+            <img src="./src/images/service_architecture.png" height="500" alt="service_architecture.png">
+            <br>
             <br>
         </div>
-        <hr>
+        <br>
         <div id="data-section">
             <h2>2. 데이터</h2>
             <h3 id="data-section">데이터 수집</h3>
@@ -132,21 +135,21 @@
                 <li>제공된 Train과 Validation 데이터의 유사성이 높다고 판단하여, Test 데이터는 별도로 촬영하여 소량 수집하였음.</li>
             </ul>
         </div>
-        <hr>
+        <br>
         <div id="modeling-section">
             <h2>3. 모델링</h2>
             <h3 id="SSLR-V1">수어인식 모델: SSLR V1 (Soochaehwa Sign Language Recognizer V1)</h3>
             <img src="./src/images/SSLRV1_full.png" alt="SSLRV1_full.png" height="300">
             <h3 id="SSLR-V2">수어인식 모델: SSLR V2 (Soochaehwa Sign Language Recognizer V2)</h3>
         </div>
-        <hr>
+        <br>
         <div id="chatbot-section">
             <h2>4. 챗봇</h2>
             <h3>사전 준비: Vector Database 구축</h3>
             <h3>질문 가공</h3>
             <h3>챗봇 답변 반환</h3>
         </div>
-        <hr>
+        <br>
         <div id="future-improvements">
         <h2>5. 추후 개선 방향</h2>
         </div>
