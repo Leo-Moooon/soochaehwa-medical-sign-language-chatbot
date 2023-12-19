@@ -153,15 +153,19 @@
                             <li>아키텍쳐 특징</li>
                             <ul>
                                 <li>사전학습된 DenseNet-121을 통해 각 프레임 내 특징 추출</li>
-                                <em>"Beyond Short Snippets: Deep Networks for Video Classification"(Ng et al., 2015)</em>
                                 <li>Transformer-Encoder 구조로, 프레임 간 전후맥락을 고려한 학습 의도</li>
-                                <em>"Attention Is All You Need" (Vaswani, A., et al., 2017)</em>
+                            </ul>
+                            <br>
+                            <li>참고 레퍼런스</li>
+                            <ul>
+                                <li><em>"Beyond Short Snippets: Deep Networks for Video Classification"(Ng et al., 2015)</em></li>
+                                <li><em>"Attention Is All You Need" (Vaswani, A., et al., 2017)</em></li>
                             </ul>
                         </ol>
                     </td>
                 </tr>
             </table>
-            <img src="./src/images/SSLRV1_full.png" alt="SSLRV1_full.png" height="300">
+            <br>
             <h3 id="SSLR-V2">수어인식 모델: SSLR V2 (Soochaehwa Sign Language Recognizer V2)</h3>
         </div>
         <br>
