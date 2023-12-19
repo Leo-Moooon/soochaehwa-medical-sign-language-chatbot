@@ -139,6 +139,28 @@
         <div id="modeling-section">
             <h2>3. 모델링</h2>
             <h3 id="SSLR-V1">수어인식 모델: SSLR V1 (Soochaehwa Sign Language Recognizer V1)</h3>
+            <table class="sslrv1-table" style="border-collapse:collapse;">
+                <tr>
+                    <td><img src="./src/images/SSLRV1_full.png" alt="SSLRV1_full.png" height="300"></td>
+                    <td>
+                        <ol>
+                            <li>접근 가설</li>
+                            <ul>
+                                <li>수어는 연속된 동작이므로, 행동을 인식하고 분류하는 문제로 파악</li>
+                                <li>RGB 비디오를 학습하여 각 동작에 대한 일반화 기대</li>
+                            </ul>
+                            <br>
+                            <li>아키텍쳐 특징</li>
+                            <ul>
+                                <li>사전학습된 DenseNet-121을 통해 각 프레임 내 특징 추출</li>
+                                <em>"Beyond Short Snippets: Deep Networks for Video Classification"(Ng et al., 2015)</em>
+                                <li>Transformer-Encoder 구조로, 프레임 간 전후맥락을 고려한 학습 의도</li>
+                                <em>"Attention Is All You Need" (Vaswani, A., et al., 2017)</em>
+                            </ul>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
             <img src="./src/images/SSLRV1_full.png" alt="SSLRV1_full.png" height="300">
             <h3 id="SSLR-V2">수어인식 모델: SSLR V2 (Soochaehwa Sign Language Recognizer V2)</h3>
         </div>
