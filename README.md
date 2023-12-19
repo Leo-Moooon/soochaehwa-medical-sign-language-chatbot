@@ -141,7 +141,7 @@
             <h3 id="SSLR-V1">수어인식 모델: SSLR V1 (Soochaehwa Sign Language Recognizer V1)</h3>
             <table class="sslrv1-table">
                 <tr>
-                    <td><img src="./src/images/SSLRV1_full.png" height="300" alt="SSLRV1_full.png"></td>
+                    <td width="300"><img src="./src/images/SSLRV1_full.png" height="300" alt="SSLRV1_full.png"></td>
                     <td>
                         <ol>
                             <li>접근 가설</li>
@@ -169,7 +169,7 @@
             <h3 id="SSLR-V2">수어인식 모델: SSLR V2 (Soochaehwa Sign Language Recognizer V2)</h3>
             <table class="sslrv2-table">
                 <tr>
-                    <td><img src="./src/images/SSLRV2_full.png" height="300" alt="SSLRV2_full.png"></td>                    <td>
+                    <td width="300"><img src="./src/images/SSLRV2_full.png" height="300" alt="SSLRV2_full.png"></td>                    <td>
                         <ol>
                             <li>접근 가설</li>
                             <ul>
