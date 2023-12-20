@@ -274,10 +274,10 @@
             </p>
             <ol>
                 <li>수어(텍스트) 입력<br>
-                     <code>predict_result = ['여드름', '치료법']</code>
+                     <pre><code>predict_result = ['여드름', '치료법']</code></pre>
                 </li>
                 <br>
-                <li> One-Shot Prompting 예시<br>
+                <li> One-Shot Prompting 예시 구문<br>
                     <pre><code>
                         f''' <br>
                         1. 아래 리스트에 제시 단어를 조합하여 의문형 문장을 만든다. <br>
