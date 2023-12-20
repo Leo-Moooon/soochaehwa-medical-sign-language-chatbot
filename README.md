@@ -100,9 +100,9 @@
                 <br>
                 <li>챗봇</li>                
                 <ul class="chatbot-ul">
-                    <li><a href="">사전 준비: Vector Database 구축</a></li>
-                    <li><a href="">질문 가공: ChatGPT API, One-Shot Prompting을 통한 말뭉치 -> 문장 변환</a></li>
-                    <li><a href="">챗봇 답변 반환: Langchain을 통한 ChatGPT 기반의 RAG(Retrieval-Augmented Generation) 구현</a></li>
+                    <li><a href="#FAQ-section">FAQ</a></li>
+                    <li><a href="#query-embedding-section">질문 가공: ChatGPT API, One-Shot Prompting을 이용한 문장 변환</a></li>
+                    <li><a href="#return-answer-section">답변 반환: Langchain을 통한 ChatGPT 기반의 RAG(Retrieval-Augmented Generation) 구현</a></li>
                 </ul>
                 <br>
                 <br>
@@ -118,6 +118,10 @@
             <br>
             <h3 id="service-ui">서비스 UI</h3>
             <img src="./src/images/service_ui.png" height="300" alt="service_ui.png">
+            <ul>
+                <li>Flask를 이용한 웹서비스 구현</li>
+                <li>Socket.IO를 통한 클라이언트-서버 실시간 통신</li>
+            </ul>
             <br>
             <br>
             <h3 id="service-architecture">서비스 구조도</h3>
@@ -243,14 +247,63 @@
         </div>
         <br>
         <div id="chatbot-section">
-            <h2>4. 챗봇</h2>
-            <h3>사전 준비: Vector Database 구축</h3>
-            <h3>질문 가공</h3>
-            <h3>챗봇 답변 반환</h3>
-        </div>
-        <br>
-        <div id="future-improvements">
-        <h2>5. 추후 개선 방향</h2>
+            <h2>4. RAG(Retrieval-Augmemted Generation) 챗봇</h2>
+            <p>
+                RAG(Retrieval-Augmented Generation, 검색 증강 생성)는 LLM이 학습한 데이터가 아닌, 제공받는 외부 정보 내에서 검색한 정보를 기반으로 답변을 생성하는 기술입니다. 
+                본 프로젝트에서는 Langchain을 이용해 ChatGPT가 입력받은 질문의 답변을 외부 정보로 입력한 PDF 자료 내에서 검색하여 반환하도록 설계하였습니다.
+            </p>
+            <br>
+            <h3 id="FAQ-section">FAQ</h3>
+            <p><strong>Q1.</strong> ChatGPT 등의 성능 좋은 기존 생성형 모델을 쓰지 않는 이유는?</p>
+            <blockquote>
+                ChatGPT 등의 여러 LLM이 다양한 도메인에서 높은 성능을 보이면서 큰 이슈가 된 것은 사실입니다. 
+                하지만 해당 LLM이 챗봇에게 요구하는 정보를 모두 가지고 있는지 확신할 수 없으며, 잘못된 정보를 제공하는 Hallucination 현상은 정보의 신뢰성을 중요시하는 병원에게 치명적이라 판단하여 그대로 쓰는 것은 선택지에서 배제하였습니다. 
+            </blockquote>
+            <p><strong>Q2.</strong> 정보의 신뢰성이 중요하다면 Rule-based 챗봇을 고려하지는 않았는지?</p>
+            <blockquote>
+                입력받은 질문에 대해 반환할 답변을 미리 정하는 방법은 앞서 언급한 Hallucination 문제를 원천적으로 방지할 수 있습니다. 
+                하지만 챗봇의 성능이 질문-답변 패턴의 가짓수 및 정교함에 비례한다는 점에서 지속적인 인적 자원의 부담으로 직결이 됩니다. 
+                따라서 이를 해소하는 RAG(검색 증강 생성)를 적용하였습니다.
+            </blockquote>
+            <br>
+            <img src="./src/images/chatbot_rag.png">
+            <h3 id="query-embedding-section">사전준비: 질문 가공</h3>
+            <p> 하나의 질문을 나타내는 일련의 단어 영상은 SSLR을 통해 예측 단어의 리스트로 변환됩니다. 
+                이를 문장으로 변환하기 위해 단기적인 방법으로써 ChatGPT에 One-Shot Prompting을 적용하였습니다.
+                더 나은 성능을 위해 여러 예시를 제공하는 Few-Shot Prompting 적용도 가능하며, 장기적으로는 수어 문장 번역 모델을 개발 및 확보하여 본 과정을 생략할 수 있습니다.
+            </p>
+            <ol>
+                <li>수어(텍스트) 입력<br>
+                     <code>predict_result = ['여드름', '치료법']</code>
+                </li>
+                <br>
+                <li> One-Shot Prompting 예시<br>
+                    <code>
+                        f''' <br>
+                        1. 아래 리스트에 제시 단어를 조합하여 의문형 문장을 만든다. <br>
+                        2. 조합 문장은 최적의 문장 1개를 출력한다. <br>
+                        3. 출력 문장은 아래 형태를 유지하여 만든다. <br>
+                            (예시: 제시 단어(사용자 제시 단어): ['여드름', '치료법'], <br>
+                            의문형 문장(반환 내용): '여드름 치료법 알려주세요.' <br>
+                        '''
+                    </code>
+                </li>
+            </ol>
+            <br>
+            <h3 id="return-answer-section">RAG를 위한 벡터 데이터베이스 구축 및 답변 반환</h3>
+            <ul>
+                <li>벡터 데이터베이스 구축 <br>
+                    <ul>
+                        <li>HuggingFace의 "intfloat/multilingual-e5-large"를 통해 PDF 내 텍스트 임베딩</li>
+                        <li>Chroma를 통한 임베딩 된 텍스트의 벡터 데이터베이스화</li>
+                    </ul>
+                    <br>
+                <li>답변 반환</li>
+                    <ul>
+                        <li>LLM으로 ChatGPT 채택</li>
+                        <li>Langchain의 RetrievalQA 메소드를 통해 입력받은 질문과 유사도가 높은 내용을 벡터 DB 내에서 검색하여 답변 생성</li>
+                    </ul>
+            </ul>
         </div>
     </body>
 </html>
