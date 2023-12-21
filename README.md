@@ -18,7 +18,9 @@
             </tr>
             <tr>
               <th>인원구성</th>
-              <td>문성우 박태휘 채성혁</td>
+              <td><a href="https://github.com/Leo-Moooon">문성우</a> 
+                  <a href="https://github.com/okteam13">박태휘</a> 
+                  <a href="https://github.com/xxonyuk">채성혁</a></td>
             </tr>
             <tr>
               <th>프로젝트 목표</th>
